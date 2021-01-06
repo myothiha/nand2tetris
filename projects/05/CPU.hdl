@@ -1,0 +1,96 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/05/CPU.hdl
+
+/**
+ * The Hack CPU (Central Processing unit), consisting of an ALU,
+ * two registers named A and D, and a program counter named PC.
+ * The CPU is designed to fetch and execute instructions written in 
+ * the Hack machine language. In particular, functions as follows:
+ * Executes the inputted instruction according to the Hack machine 
+ * language specification. The D and A in the language specification
+ * refer to CPU-resident registers, while M refers to the external
+ * memory location addressed by A, i.e. to Memory[A]. The inM input 
+ * holds the value of this location. If the current instruction needs 
+ * to write a value to M, the value is placed in outM, the address 
+ * of the target location is placed in the addressM output, and the 
+ * writeM control bit is asserted. (When writeM==0, any value may 
+ * appear in outM). The outM and writeM outputs are combinational: 
+ * they are affected instantaneously by the execution of the current 
+ * instruction. The addressM and pc outputs are clocked: although they 
+ * are affected by the execution of the current instruction, they commit 
+ * to their new values only in the next time step. If reset==1 then the 
+ * CPU jumps to address 0 (i.e. pc is set to 0 in next time step) rather 
+ * than to the address resulting from executing the current instruction. 
+ */
+
+CHIP CPU {
+
+    IN  inM[16],         // M value input  (M = contents of RAM[A])
+        instruction[16], // Instruction for execution
+        reset;           // Signals whether to re-start the current
+                         // program (reset==1) or continue executing
+                         // the current program (reset==0).
+
+    OUT outM[16],        // M value output
+        writeM,          // Write to M? 
+        addressM[15],    // Address in data memory (of M)
+        pc[15];          // address of next instruction
+
+    PARTS:
+    // Decode A-Instruction
+    Not(in=instruction[15], out=aInstructionOpCode);
+    Or(a=aInstructionOpCode, b=instruction[5], out=aLoad);
+
+    // choose which data to save
+    Mux16(a=aluOut, b=instruction, sel=aInstructionOpCode, out=aData);
+
+    // Save instruction data or outM to A-register
+    ARegister(in=aData, load=aLoad, out=ARegisterValue, out[0..14]=addressM);
+
+    // Decode C-Instruction
+    And(a=instruction[15], b=instruction[12], out=aBit);
+    And(a=instruction[15], b=instruction[11], out=c1);
+    And(a=instruction[15], b=instruction[10], out=c2);
+    And(a=instruction[15], b=instruction[9], out=c3);
+    And(a=instruction[15], b=instruction[8], out=c4);
+    And(a=instruction[15], b=instruction[7], out=c5);
+    And(a=instruction[15], b=instruction[6], out=c6);
+    And(a=instruction[15], b=instruction[5], out=d1);
+    And(a=instruction[15], b=instruction[4], out=d2);
+    And(a=instruction[15], b=instruction[3], out=d3, out=writeM);
+    And(a=instruction[15], b=instruction[2], out=JLT);
+    And(a=instruction[15], b=instruction[1], out=JEQ);
+    And(a=instruction[15], b=instruction[0], out=JGT);
+
+
+    // Choose A or M value Feed to ALU
+    Mux16(a=ARegisterValue, b=inM, sel=aBit, out=aluInput);
+
+    // D Register
+    DRegister(in=aluOut, load=d2, out=dOut);
+
+    // ALU Process
+    ALU(x=dOut, y=aluInput, zx=c1, nx=c2, zy=c3, ny=c4, f=c5, no=c6,
+        out=outM, out=aluOut, zr=zero, ng=negative);
+
+    Or(a=zero, b=negative, out=ZeroOrNegative);
+    // Not (zero or negative) = positive value = greater than zero
+    Not(in=ZeroOrNegative, out=positive);
+
+    //if Positive and greater than zero . JGT Bit = 1
+    And(a=positive, b=JGT, out=greaterThanZero);
+
+    // if negative and less than zero. JLT bit = 1
+    And(a=negative, b=JLT, out=lessThanZero);
+
+    //if Zero and equal to zero . JEQ Bit = 1
+    And(a=JEQ, b=zero, out=equalToZero);
+
+    // if output < or > or = 0, then jump
+    Or(a=greaterThanZero, b=lessThanZero, out=gtOrLtZr);
+    Or(a=gtOrLtZr, b=equalToZero, out=load);
+
+    PC(in=ARegisterValue, load=load, inc=true, reset=reset, out[0..14]=pc);
+}
