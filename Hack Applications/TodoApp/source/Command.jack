@@ -1,0 +1,150 @@
+/** Implement Command Class. */
+class Command {
+	
+	static TaskList taskList;
+	static Array commands;
+
+
+	function void init() {
+		let commands = Array.new(7);
+		let commands[0] = "EXIT";
+		let commands[1] = "HELP";
+		let commands[2] = "CLR";
+		let commands[3] = "CREATE";
+		let commands[4] = "SHOW";
+		let commands[5] = "SHOW COMPLETE";
+		let commands[6] = "COMPLETE";
+		let taskList = TaskList.new();
+
+		// Sample Data
+		do taskList.append(Task.new("goto shopping"));
+		do taskList.append(Task.new("Do Laundry"));
+		do taskList.append(Task.new("Do dish"));
+		do taskList.append(Task.new("Do homework"));
+		do taskList.append(Task.new("Do chores"));
+		return;
+	}
+	
+	function void run() {
+		var String command;
+		var boolean exit;
+		
+		let exit = false;
+
+		while (~exit) {
+			let command = Keyboard.readLine("TODO APP >>>");
+
+			// if command = "Exit"
+			if (Util.compareString(command, commands[0])) {
+				let exit = true;
+			}
+
+			do Command.handleCommand(command);
+		}
+
+		do command.dispose();
+		do Util.printStringln("Closing... Thank for using TODO APP.");
+		return;
+	}
+
+	function void handleCommand(String command) {
+		var String title;
+		var int id;
+		var boolean validCommand;
+
+		let validCommand = false;
+
+		if (Util.compareString(command, commands[1])) { 
+			do Command.handleHelpCommand();
+			let validCommand = true;
+		}
+
+		if (Util.compareString(command, commands[2])) {
+			let validCommand = true;
+			do Command.clearScreen();
+		}
+
+		if (Util.compareString(command, commands[3])) { 
+			let validCommand = true;
+			let title = Keyboard.readLine("Type your task Title: ");
+			do Command.createTask(title);
+		}
+
+		if (Util.compareString(command, commands[4])) { 
+			let validCommand = true;
+			do Command.showTasks(); 
+		}
+
+		if (Util.compareString(command, commands[5])) {
+			let validCommand = true;
+			do Command.showCompleteTasks();
+		}
+
+		if (Util.compareString(command, commands[6])) { 
+			let validCommand = true;
+			let id = Keyboard.readInt("Type your task number: ");
+			do Command.completeTask(id);
+		}
+
+		if (Util.compareString(command, commands[0])) {
+			let validCommand = true;
+		}
+
+		if (~validCommand) {
+			do Util.printStringln("Invalid Command. Type HELP for command list.");
+		}
+		
+		return;
+	}
+
+	function void handleHelpCommand() {
+		do Util.printStringln("Type HELP for command list.");
+		do Util.printStringln("Type CREATE to create a new TASK.");
+		do Util.printStringln("Type SHOW to show TODO task list.");
+		do Util.printStringln("Type SHOW COMPLETE to show completed task list.");
+		do Util.printStringln("Type COMPLETE to complete a task.");
+		do Util.printStringln("Type CLR to clear the screen.");
+
+		return;
+	}
+
+	function void clearScreen() {
+		do Screen.clearScreen();
+		do Output.moveCursor(0,0);
+		do Command.run();
+		return;
+	}
+
+	function void createTask(String data) {
+		do taskList.append(Task.new(data));
+		do Util.printStringln("A new task created.");
+		return;
+	}
+
+	function void showTasks() {
+		do taskList.print();
+		return;
+	}
+
+	function void showCompleteTasks() {
+		do taskList.printCompleteTask();
+		return;
+	}
+
+	function void completeTask(int id) {
+		do taskList.completeTask(id);
+		do Util.printStringln("Congratulation. You have completed a task.");
+		return;
+	}
+
+	function void showCompletedTasks() {
+		return;
+	}
+
+
+	method void dispose() {
+		do taskList.dispose();
+		do Memory.deAlloc(this);
+		return;
+	}
+}

@@ -1,0 +1,31 @@
+/** ToDo List Program. */
+class Main {
+	function void main() {
+		var Command cmd;
+		var TaskList taskList;
+		var Task task;
+		var Array taskArr;
+
+		let taskList = TaskList.new();
+		do taskList.append(Task.new("goto shopping"));
+		do taskList.append(Task.new("Do Laundry"));
+		do taskList.append(Task.new("Do dish"));
+		do taskList.append(Task.new("Do homework"));
+		do taskList.append(Task.new("Do chores"));
+		do taskList.append(Task.new("Do smart"));
+		do taskList.append(Task.new("Short hand"));
+
+		// do taskList.completeTask(3);
+		let task = taskList.get(3);
+		let taskArr = task;
+		let taskArr[1] = -1;
+		// do Util.printIntln(task.isCompleted());
+
+		// do taskList.print();
+
+		do Command.init();
+		do Command.run();
+
+		return;
+	}
+}

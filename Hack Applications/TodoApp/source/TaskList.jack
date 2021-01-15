@@ -1,0 +1,85 @@
+/**s Create Task lists class */
+
+class TaskList {
+	field Array tasks;
+	field int length;
+	field int max;
+
+	constructor TaskList new() {
+		let length = 0;
+		let max = 30;
+		let tasks = Array.new(max);
+		return this;
+	}
+
+	method void append(Task task) {
+		let tasks[length] = task;
+		let length = length + 1;
+		return;
+	}
+
+	method Task get(int index) {
+		return tasks[index];
+	}
+
+	method int length() {
+		return length;
+	}
+
+	method void completeTask(int index) {
+		var Task task;
+		let task = tasks[index];
+		let tasks[index] = task.completed();
+		return;
+	}
+
+	method void dispose() {
+		do tasks.dispose();
+		do Memory.deAlloc(this);
+		return;
+	}
+
+	method void print() {
+		var int counter;
+		var Task task;
+
+		let counter = 0;
+		while (counter < length) {
+			let task = tasks[counter];
+			if (~task.isCompleted()) {
+				do Output.printString("|");
+				do Output.printInt(counter);
+				do Output.printString("| ");				
+
+				do Util.printStringln(task.getTitle());
+			}
+			let counter = counter + 1;
+		}
+
+		// do task.dispose();
+
+		return;
+	}
+
+	method void printCompleteTask() {
+		var int counter;
+		var Task task;
+
+		let counter = 0;
+		while (counter < length) {
+			let task = tasks[counter];
+			if (task.isCompleted()) {
+				do Output.printString("|");
+				do Output.printInt(counter);
+				do Output.printString("| ");				
+
+				do Util.printStringln(task.getTitle());
+			}
+			let counter = counter + 1;
+		}
+
+		// do task.dispose();
+
+		return;
+	}
+}

@@ -1,0 +1,41 @@
+class Util {
+
+
+	function boolean compareString(String s1, String s2) {
+		var int s1_length;
+		var int s2_length;
+		var int counter;
+
+		let s1_length = s1.length();
+		let s2_length = s2.length();
+
+		if ( ~(s1_length = s2_length) ) {
+			return false;
+		}
+
+		let counter = 0;
+		while (counter < s1_length)
+		{
+			if (~(s1.charAt(counter) = s2.charAt(counter))) {
+				return false;
+			}
+
+			let counter = counter + 1;
+		}
+
+		return true;
+	}
+
+
+	function void printStringln(String s) {
+		do Output.printString(s);
+		do Output.println();
+		return;
+	}
+
+	function void printIntln(int i) {
+		do Output.printInt(i);
+		do Output.println();
+		return;
+	}
+}

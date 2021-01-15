@@ -1,0 +1,31 @@
+/** Create Task Class */
+
+class Task {
+	field String title;
+	field boolean isCompleted;
+
+	constructor Task new(String todo) {
+		let title = todo;
+		let isCompleted = false;
+		return this;
+	}
+
+	method String getTitle() {
+		return title;
+	}
+
+	method boolean isCompleted() {
+		return isCompleted;
+	}
+
+	method Task completed() {
+		let isCompleted = true;
+		return this;
+	}
+
+	method void dispose() {
+		do title.dispose();
+		do Memory.deAlloc(this);
+		return;
+	}
+}
