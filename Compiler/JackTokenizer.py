@@ -137,7 +137,7 @@ class JackTokenizer:
                         tokens.append((identifier, self.IDENTIFIER))
                     tokens.append((c, self.SYMBOL))
                     identifier = ""
-                elif identifier.isnumeric() or is_int is True:
+                elif (identifier.isnumeric() or is_int is True) and is_string is False:
                     if is_int is False:
                         int_const += c
                         is_int = True

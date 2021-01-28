@@ -1,0 +1,324 @@
+<class>
+  <keyword> class </keyword>
+  <identifier>
+    <value>Main</value>
+    <category> Class </category>
+  </identifier>
+  <symbol> { </symbol>
+  <classVarDec>
+    <keyword> static </keyword>
+    <keyword> boolean </keyword>
+    <identifier>
+      <value>test</value>
+      <category> static </category>
+    </identifier>
+    <symbol> ; </symbol>
+  </classVarDec>
+  <subroutineDec>
+    <keyword> function </keyword>
+    <keyword> void </keyword>
+    <identifier>
+      <value>main</value>
+      <category> subroutine </category>
+    </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <varDec>
+        <keyword> var </keyword>
+        <identifier> SquareGame </identifier>
+        <identifier>
+          <value>game</value>
+          <category> var </category>
+        </identifier>
+        <symbol> ; </symbol>
+      </varDec>
+      <statements>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier>
+            <value>game</value>
+            <category> var </category>
+          </identifier>
+          <symbol> = </symbol>
+          <expression>
+            <term>
+              <identifier>
+                <value>SquareGame</value>
+                <category> var </category>
+              </identifier>
+              <symbol> . </symbol>
+              <symbol> ( </symbol>
+              <expressionList>
+              </expressionList>
+              <symbol> ) </symbol>
+            </term>
+          </expression>
+          <symbol> ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier>
+            <value>game</value>
+            <category> class </category>
+          </identifier>
+          <symbol> . </symbol>
+          <identifier>
+            <value>run</value>
+            <category> subroutine </category>
+          </identifier>
+          <symbol> ( </symbol>
+          <expressionList>
+          </expressionList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier>
+            <value>game</value>
+            <category> class </category>
+          </identifier>
+          <symbol> . </symbol>
+          <identifier>
+            <value>dispose</value>
+            <category> subroutine </category>
+          </identifier>
+          <symbol> ( </symbol>
+          <expressionList>
+          </expressionList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword> function </keyword>
+    <keyword> void </keyword>
+    <identifier>
+      <value>test</value>
+      <category> subroutine </category>
+    </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <varDec>
+        <keyword> var </keyword>
+        <keyword> int </keyword>
+        <identifier>
+          <value>i</value>
+          <category> var </category>
+        </identifier>
+        <symbol> , </symbol>
+        <identifier>
+          <value>j</value>
+          <category> var </category>
+        </identifier>
+        <symbol> ; </symbol>
+      </varDec>
+      <varDec>
+        <keyword> var </keyword>
+        <identifier> String </identifier>
+        <identifier>
+          <value>s</value>
+          <category> var </category>
+        </identifier>
+        <symbol> ; </symbol>
+      </varDec>
+      <varDec>
+        <keyword> var </keyword>
+        <identifier> Array </identifier>
+        <identifier>
+          <value>a</value>
+          <category> var </category>
+        </identifier>
+        <symbol> ; </symbol>
+      </varDec>
+      <statements>
+        <ifStatement>
+          <keyword> if </keyword>
+          <symbol> ( </symbol>
+          <expression>
+            <term>
+              <keyword> false </keyword>
+            </term>
+          </expression>
+          <symbol> ) </symbol>
+          <symbol> { </symbol>
+          <statements>
+            <letStatement>
+              <keyword> let </keyword>
+              <identifier>
+                <value>s</value>
+                <category> var </category>
+              </identifier>
+              <symbol> = </symbol>
+              <expression>
+                <term>
+                  <stringConstant> string constant </stringConstant>
+                </term>
+              </expression>
+              <symbol> ; </symbol>
+            </letStatement>
+            <letStatement>
+              <keyword> let </keyword>
+              <identifier>
+                <value>s</value>
+                <category> var </category>
+              </identifier>
+              <symbol> = </symbol>
+              <expression>
+                <term>
+                  <keyword> null </keyword>
+                </term>
+              </expression>
+              <symbol> ; </symbol>
+            </letStatement>
+            <letStatement>
+              <keyword> let </keyword>
+              <identifier>
+                <value>a</value>
+                <category> var </category>
+              </identifier>
+              <symbol> [ </symbol>
+              <expression>
+                <term>
+                  <integerConstant> 1 </integerConstant>
+                </term>
+              </expression>
+              <symbol> ] </symbol>
+              <symbol> = </symbol>
+              <expression>
+                <term>
+                  <identifier>
+                    <value>a</value>
+                    <category> var </category>
+                  </identifier>
+                  <symbol> [ </symbol>
+                  <expression>
+                    <term>
+                      <integerConstant> 2 </integerConstant>
+                    </term>
+                  </expression>
+                  <symbol> ] </symbol>
+                </term>
+              </expression>
+              <symbol> ; </symbol>
+            </letStatement>
+          </statements>
+          <symbol> } </symbol>
+          <keyword> else </keyword>
+          <symbol> { </symbol>
+          <statements>
+            <letStatement>
+              <keyword> let </keyword>
+              <identifier>
+                <value>i</value>
+                <category> var </category>
+              </identifier>
+              <symbol> = </symbol>
+              <expression>
+                <term>
+                  <identifier>
+                    <value>i</value>
+                    <category> var </category>
+                  </identifier>
+                </term>
+                <symbol> * </symbol>
+                <term>
+                  <symbol> ( </symbol>
+                  <expression>
+                    <term>
+                      <symbol> - </symbol>
+                      <term>
+                        <identifier>
+                          <value>j</value>
+                          <category> var </category>
+                        </identifier>
+                      </term>
+                    </term>
+                  </expression>
+                  <symbol> ) </symbol>
+                </term>
+              </expression>
+              <symbol> ; </symbol>
+            </letStatement>
+            <letStatement>
+              <keyword> let </keyword>
+              <identifier>
+                <value>j</value>
+                <category> var </category>
+              </identifier>
+              <symbol> = </symbol>
+              <expression>
+                <term>
+                  <identifier>
+                    <value>j</value>
+                    <category> var </category>
+                  </identifier>
+                </term>
+                <symbol> / </symbol>
+                <term>
+                  <symbol> ( </symbol>
+                  <expression>
+                    <term>
+                      <symbol> - </symbol>
+                      <term>
+                        <integerConstant> 2 </integerConstant>
+                      </term>
+                    </term>
+                  </expression>
+                  <symbol> ) </symbol>
+                </term>
+              </expression>
+              <symbol> ; </symbol>
+            </letStatement>
+            <letStatement>
+              <keyword> let </keyword>
+              <identifier>
+                <value>i</value>
+                <category> var </category>
+              </identifier>
+              <symbol> = </symbol>
+              <expression>
+                <term>
+                  <identifier>
+                    <value>i</value>
+                    <category> var </category>
+                  </identifier>
+                </term>
+                <symbol> | </symbol>
+                <term>
+                  <identifier>
+                    <value>j</value>
+                    <category> var </category>
+                  </identifier>
+                </term>
+              </expression>
+              <symbol> ; </symbol>
+            </letStatement>
+          </statements>
+          <symbol> } </symbol>
+        </ifStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <symbol> } </symbol>
+</class>

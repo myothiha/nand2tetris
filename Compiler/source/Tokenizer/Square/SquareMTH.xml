@@ -1,0 +1,1860 @@
+<class>
+  <keyword> class </keyword>
+  <identifier>
+    <value>Square</value>
+    <category> Class </category>
+  </identifier>
+  <symbol> { </symbol>
+  <classVarDec>
+    <keyword> field </keyword>
+    <keyword> int </keyword>
+    <identifier>
+      <value>x</value>
+      <category> field </category>
+      <index> 0 </index>
+      <define> true </define>
+    </identifier>
+    <symbol> , </symbol>
+    <identifier>
+      <value>y</value>
+      <category> field </category>
+      <index> 1 </index>
+      <define> true </define>
+    </identifier>
+    <symbol> ; </symbol>
+  </classVarDec>
+  <classVarDec>
+    <keyword> field </keyword>
+    <keyword> int </keyword>
+    <identifier>
+      <value>size</value>
+      <category> field </category>
+      <index> 2 </index>
+      <define> true </define>
+    </identifier>
+    <symbol> ; </symbol>
+  </classVarDec>
+  <subroutineDec>
+    <keyword> constructor </keyword>
+    <identifier> Square </identifier>
+    <identifier>
+      <value>new</value>
+      <category> subroutine </category>
+    </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+      <keyword> int </keyword>
+      <identifier>
+        <value>Ax</value>
+        <category> arg </category>
+        <index> 0 </index>
+        <define> true </define>
+      </identifier>
+      <symbol> , </symbol>
+      <keyword> int </keyword>
+      <identifier>
+        <value>Ay</value>
+        <category> arg </category>
+        <index> 1 </index>
+        <define> true </define>
+      </identifier>
+      <symbol> , </symbol>
+      <keyword> int </keyword>
+      <identifier>
+        <value>Asize</value>
+        <category> arg </category>
+        <index> 2 </index>
+        <define> true </define>
+      </identifier>
+    </parameterList>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <statements>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier>
+            <value>x</value>
+            <category> var </category>
+            <index> 0 </index>
+            <define> false </define>
+          </identifier>
+          <symbol> = </symbol>
+          <expression>
+            <term>
+              <identifier>
+                <value>Ax</value>
+                <category> var </category>
+                <index> 0 </index>
+                <define> false </define>
+              </identifier>
+            </term>
+          </expression>
+          <symbol> ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier>
+            <value>y</value>
+            <category> var </category>
+            <index> 1 </index>
+            <define> false </define>
+          </identifier>
+          <symbol> = </symbol>
+          <expression>
+            <term>
+              <identifier>
+                <value>Ay</value>
+                <category> var </category>
+                <index> 1 </index>
+                <define> false </define>
+              </identifier>
+            </term>
+          </expression>
+          <symbol> ; </symbol>
+        </letStatement>
+        <letStatement>
+          <keyword> let </keyword>
+          <identifier>
+            <value>size</value>
+            <category> var </category>
+            <index> 2 </index>
+            <define> false </define>
+          </identifier>
+          <symbol> = </symbol>
+          <expression>
+            <term>
+              <identifier>
+                <value>Asize</value>
+                <category> var </category>
+                <index> 2 </index>
+                <define> false </define>
+              </identifier>
+            </term>
+          </expression>
+          <symbol> ; </symbol>
+        </letStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier>
+            <value>draw</value>
+            <category> subroutine </category>
+          </identifier>
+          <symbol> ( </symbol>
+          <expressionList>
+          </expressionList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <expression>
+            <term>
+              <keyword> this </keyword>
+            </term>
+          </expression>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword> method </keyword>
+    <keyword> void </keyword>
+    <identifier>
+      <value>dispose</value>
+      <category> subroutine </category>
+    </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <statements>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier>
+            <value>Memory</value>
+            <category> class </category>
+          </identifier>
+          <symbol> . </symbol>
+          <identifier>
+            <value>deAlloc</value>
+            <category> subroutine </category>
+          </identifier>
+          <symbol> ( </symbol>
+          <expressionList>
+            <expression>
+              <term>
+                <keyword> this </keyword>
+              </term>
+            </expression>
+          </expressionList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword> method </keyword>
+    <keyword> void </keyword>
+    <identifier>
+      <value>draw</value>
+      <category> subroutine </category>
+    </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <statements>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier>
+            <value>Screen</value>
+            <category> class </category>
+          </identifier>
+          <symbol> . </symbol>
+          <identifier>
+            <value>setColor</value>
+            <category> subroutine </category>
+          </identifier>
+          <symbol> ( </symbol>
+          <expressionList>
+            <expression>
+              <term>
+                <keyword> true </keyword>
+              </term>
+            </expression>
+          </expressionList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier>
+            <value>Screen</value>
+            <category> class </category>
+          </identifier>
+          <symbol> . </symbol>
+          <identifier>
+            <value>drawRectangle</value>
+            <category> subroutine </category>
+          </identifier>
+          <symbol> ( </symbol>
+          <expressionList>
+            <expression>
+              <term>
+                <identifier>
+                  <value>x</value>
+                  <category> var </category>
+                  <index> 0 </index>
+                  <define> false </define>
+                </identifier>
+              </term>
+            </expression>
+            <symbol> , </symbol>
+            <expression>
+              <term>
+                <identifier>
+                  <value>y</value>
+                  <category> var </category>
+                  <index> 1 </index>
+                  <define> false </define>
+                </identifier>
+              </term>
+            </expression>
+            <symbol> , </symbol>
+            <expression>
+              <term>
+                <identifier>
+                  <value>x</value>
+                  <category> var </category>
+                  <index> 0 </index>
+                  <define> false </define>
+                </identifier>
+              </term>
+              <symbol> + </symbol>
+              <term>
+                <identifier>
+                  <value>size</value>
+                  <category> var </category>
+                  <index> 2 </index>
+                  <define> false </define>
+                </identifier>
+              </term>
+            </expression>
+            <symbol> , </symbol>
+            <expression>
+              <term>
+                <identifier>
+                  <value>y</value>
+                  <category> var </category>
+                  <index> 1 </index>
+                  <define> false </define>
+                </identifier>
+              </term>
+              <symbol> + </symbol>
+              <term>
+                <identifier>
+                  <value>size</value>
+                  <category> var </category>
+                  <index> 2 </index>
+                  <define> false </define>
+                </identifier>
+              </term>
+            </expression>
+          </expressionList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword> method </keyword>
+    <keyword> void </keyword>
+    <identifier>
+      <value>erase</value>
+      <category> subroutine </category>
+    </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <statements>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier>
+            <value>Screen</value>
+            <category> class </category>
+          </identifier>
+          <symbol> . </symbol>
+          <identifier>
+            <value>setColor</value>
+            <category> subroutine </category>
+          </identifier>
+          <symbol> ( </symbol>
+          <expressionList>
+            <expression>
+              <term>
+                <keyword> false </keyword>
+              </term>
+            </expression>
+          </expressionList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <doStatement>
+          <keyword> do </keyword>
+          <identifier>
+            <value>Screen</value>
+            <category> class </category>
+          </identifier>
+          <symbol> . </symbol>
+          <identifier>
+            <value>drawRectangle</value>
+            <category> subroutine </category>
+          </identifier>
+          <symbol> ( </symbol>
+          <expressionList>
+            <expression>
+              <term>
+                <identifier>
+                  <value>x</value>
+                  <category> var </category>
+                  <index> 0 </index>
+                  <define> false </define>
+                </identifier>
+              </term>
+            </expression>
+            <symbol> , </symbol>
+            <expression>
+              <term>
+                <identifier>
+                  <value>y</value>
+                  <category> var </category>
+                  <index> 1 </index>
+                  <define> false </define>
+                </identifier>
+              </term>
+            </expression>
+            <symbol> , </symbol>
+            <expression>
+              <term>
+                <identifier>
+                  <value>x</value>
+                  <category> var </category>
+                  <index> 0 </index>
+                  <define> false </define>
+                </identifier>
+              </term>
+              <symbol> + </symbol>
+              <term>
+                <identifier>
+                  <value>size</value>
+                  <category> var </category>
+                  <index> 2 </index>
+                  <define> false </define>
+                </identifier>
+              </term>
+            </expression>
+            <symbol> , </symbol>
+            <expression>
+              <term>
+                <identifier>
+                  <value>y</value>
+                  <category> var </category>
+                  <index> 1 </index>
+                  <define> false </define>
+                </identifier>
+              </term>
+              <symbol> + </symbol>
+              <term>
+                <identifier>
+                  <value>size</value>
+                  <category> var </category>
+                  <index> 2 </index>
+                  <define> false </define>
+                </identifier>
+              </term>
+            </expression>
+          </expressionList>
+          <symbol> ) </symbol>
+          <symbol> ; </symbol>
+        </doStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword> method </keyword>
+    <keyword> void </keyword>
+    <identifier>
+      <value>incSize</value>
+      <category> subroutine </category>
+    </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <statements>
+        <ifStatement>
+          <keyword> if </keyword>
+          <symbol> ( </symbol>
+          <expression>
+            <term>
+              <symbol> ( </symbol>
+              <expression>
+                <term>
+                  <symbol> ( </symbol>
+                  <expression>
+                    <term>
+                      <identifier>
+                        <value>y</value>
+                        <category> var </category>
+                        <index> 1 </index>
+                        <define> false </define>
+                      </identifier>
+                    </term>
+                    <symbol> + </symbol>
+                    <term>
+                      <identifier>
+                        <value>size</value>
+                        <category> var </category>
+                        <index> 2 </index>
+                        <define> false </define>
+                      </identifier>
+                    </term>
+                  </expression>
+                  <symbol> ) </symbol>
+                </term>
+                <symbol> &lt; </symbol>
+                <term>
+                  <integerConstant> 254 </integerConstant>
+                </term>
+              </expression>
+              <symbol> ) </symbol>
+            </term>
+            <symbol> &amp; </symbol>
+            <term>
+              <symbol> ( </symbol>
+              <expression>
+                <term>
+                  <symbol> ( </symbol>
+                  <expression>
+                    <term>
+                      <identifier>
+                        <value>x</value>
+                        <category> var </category>
+                        <index> 0 </index>
+                        <define> false </define>
+                      </identifier>
+                    </term>
+                    <symbol> + </symbol>
+                    <term>
+                      <identifier>
+                        <value>size</value>
+                        <category> var </category>
+                        <index> 2 </index>
+                        <define> false </define>
+                      </identifier>
+                    </term>
+                  </expression>
+                  <symbol> ) </symbol>
+                </term>
+                <symbol> &lt; </symbol>
+                <term>
+                  <integerConstant> 510 </integerConstant>
+                </term>
+              </expression>
+              <symbol> ) </symbol>
+            </term>
+          </expression>
+          <symbol> ) </symbol>
+          <symbol> { </symbol>
+          <statements>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>erase</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <letStatement>
+              <keyword> let </keyword>
+              <identifier>
+                <value>size</value>
+                <category> var </category>
+                <index> 2 </index>
+                <define> false </define>
+              </identifier>
+              <symbol> = </symbol>
+              <expression>
+                <term>
+                  <identifier>
+                    <value>size</value>
+                    <category> var </category>
+                    <index> 2 </index>
+                    <define> false </define>
+                  </identifier>
+                </term>
+                <symbol> + </symbol>
+                <term>
+                  <integerConstant> 2 </integerConstant>
+                </term>
+              </expression>
+              <symbol> ; </symbol>
+            </letStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>draw</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol> } </symbol>
+        </ifStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword> method </keyword>
+    <keyword> void </keyword>
+    <identifier>
+      <value>decSize</value>
+      <category> subroutine </category>
+    </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <statements>
+        <ifStatement>
+          <keyword> if </keyword>
+          <symbol> ( </symbol>
+          <expression>
+            <term>
+              <identifier>
+                <value>size</value>
+                <category> var </category>
+                <index> 2 </index>
+                <define> false </define>
+              </identifier>
+            </term>
+            <symbol> &gt; </symbol>
+            <term>
+              <integerConstant> 2 </integerConstant>
+            </term>
+          </expression>
+          <symbol> ) </symbol>
+          <symbol> { </symbol>
+          <statements>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>erase</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <letStatement>
+              <keyword> let </keyword>
+              <identifier>
+                <value>size</value>
+                <category> var </category>
+                <index> 2 </index>
+                <define> false </define>
+              </identifier>
+              <symbol> = </symbol>
+              <expression>
+                <term>
+                  <identifier>
+                    <value>size</value>
+                    <category> var </category>
+                    <index> 2 </index>
+                    <define> false </define>
+                  </identifier>
+                </term>
+                <symbol> - </symbol>
+                <term>
+                  <integerConstant> 2 </integerConstant>
+                </term>
+              </expression>
+              <symbol> ; </symbol>
+            </letStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>draw</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol> } </symbol>
+        </ifStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword> method </keyword>
+    <keyword> void </keyword>
+    <identifier>
+      <value>moveUp</value>
+      <category> subroutine </category>
+    </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <statements>
+        <ifStatement>
+          <keyword> if </keyword>
+          <symbol> ( </symbol>
+          <expression>
+            <term>
+              <identifier>
+                <value>y</value>
+                <category> var </category>
+                <index> 1 </index>
+                <define> false </define>
+              </identifier>
+            </term>
+            <symbol> &gt; </symbol>
+            <term>
+              <integerConstant> 1 </integerConstant>
+            </term>
+          </expression>
+          <symbol> ) </symbol>
+          <symbol> { </symbol>
+          <statements>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>setColor</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <keyword> false </keyword>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>drawRectangle</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <symbol> ( </symbol>
+                    <expression>
+                      <term>
+                        <identifier>
+                          <value>y</value>
+                          <category> var </category>
+                          <index> 1 </index>
+                          <define> false </define>
+                        </identifier>
+                      </term>
+                      <symbol> + </symbol>
+                      <term>
+                        <identifier>
+                          <value>size</value>
+                          <category> var </category>
+                          <index> 2 </index>
+                          <define> false </define>
+                        </identifier>
+                      </term>
+                    </expression>
+                    <symbol> ) </symbol>
+                  </term>
+                  <symbol> - </symbol>
+                  <term>
+                    <integerConstant> 1 </integerConstant>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <identifier>
+                      <value>size</value>
+                      <category> var </category>
+                      <index> 2 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <identifier>
+                      <value>size</value>
+                      <category> var </category>
+                      <index> 2 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <letStatement>
+              <keyword> let </keyword>
+              <identifier>
+                <value>y</value>
+                <category> var </category>
+                <index> 1 </index>
+                <define> false </define>
+              </identifier>
+              <symbol> = </symbol>
+              <expression>
+                <term>
+                  <identifier>
+                    <value>y</value>
+                    <category> var </category>
+                    <index> 1 </index>
+                    <define> false </define>
+                  </identifier>
+                </term>
+                <symbol> - </symbol>
+                <term>
+                  <integerConstant> 2 </integerConstant>
+                </term>
+              </expression>
+              <symbol> ; </symbol>
+            </letStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>setColor</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <keyword> true </keyword>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>drawRectangle</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <identifier>
+                      <value>size</value>
+                      <category> var </category>
+                      <index> 2 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <integerConstant> 1 </integerConstant>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol> } </symbol>
+        </ifStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword> method </keyword>
+    <keyword> void </keyword>
+    <identifier>
+      <value>moveDown</value>
+      <category> subroutine </category>
+    </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <statements>
+        <ifStatement>
+          <keyword> if </keyword>
+          <symbol> ( </symbol>
+          <expression>
+            <term>
+              <symbol> ( </symbol>
+              <expression>
+                <term>
+                  <identifier>
+                    <value>y</value>
+                    <category> var </category>
+                    <index> 1 </index>
+                    <define> false </define>
+                  </identifier>
+                </term>
+                <symbol> + </symbol>
+                <term>
+                  <identifier>
+                    <value>size</value>
+                    <category> var </category>
+                    <index> 2 </index>
+                    <define> false </define>
+                  </identifier>
+                </term>
+              </expression>
+              <symbol> ) </symbol>
+            </term>
+            <symbol> &lt; </symbol>
+            <term>
+              <integerConstant> 254 </integerConstant>
+            </term>
+          </expression>
+          <symbol> ) </symbol>
+          <symbol> { </symbol>
+          <statements>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>setColor</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <keyword> false </keyword>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>drawRectangle</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <identifier>
+                      <value>size</value>
+                      <category> var </category>
+                      <index> 2 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <integerConstant> 1 </integerConstant>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <letStatement>
+              <keyword> let </keyword>
+              <identifier>
+                <value>y</value>
+                <category> var </category>
+                <index> 1 </index>
+                <define> false </define>
+              </identifier>
+              <symbol> = </symbol>
+              <expression>
+                <term>
+                  <identifier>
+                    <value>y</value>
+                    <category> var </category>
+                    <index> 1 </index>
+                    <define> false </define>
+                  </identifier>
+                </term>
+                <symbol> + </symbol>
+                <term>
+                  <integerConstant> 2 </integerConstant>
+                </term>
+              </expression>
+              <symbol> ; </symbol>
+            </letStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>setColor</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <keyword> true </keyword>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>drawRectangle</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <symbol> ( </symbol>
+                    <expression>
+                      <term>
+                        <identifier>
+                          <value>y</value>
+                          <category> var </category>
+                          <index> 1 </index>
+                          <define> false </define>
+                        </identifier>
+                      </term>
+                      <symbol> + </symbol>
+                      <term>
+                        <identifier>
+                          <value>size</value>
+                          <category> var </category>
+                          <index> 2 </index>
+                          <define> false </define>
+                        </identifier>
+                      </term>
+                    </expression>
+                    <symbol> ) </symbol>
+                  </term>
+                  <symbol> - </symbol>
+                  <term>
+                    <integerConstant> 1 </integerConstant>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <identifier>
+                      <value>size</value>
+                      <category> var </category>
+                      <index> 2 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <identifier>
+                      <value>size</value>
+                      <category> var </category>
+                      <index> 2 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol> } </symbol>
+        </ifStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword> method </keyword>
+    <keyword> void </keyword>
+    <identifier>
+      <value>moveLeft</value>
+      <category> subroutine </category>
+    </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <statements>
+        <ifStatement>
+          <keyword> if </keyword>
+          <symbol> ( </symbol>
+          <expression>
+            <term>
+              <identifier>
+                <value>x</value>
+                <category> var </category>
+                <index> 0 </index>
+                <define> false </define>
+              </identifier>
+            </term>
+            <symbol> &gt; </symbol>
+            <term>
+              <integerConstant> 1 </integerConstant>
+            </term>
+          </expression>
+          <symbol> ) </symbol>
+          <symbol> { </symbol>
+          <statements>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>setColor</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <keyword> false </keyword>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>drawRectangle</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <symbol> ( </symbol>
+                    <expression>
+                      <term>
+                        <identifier>
+                          <value>x</value>
+                          <category> var </category>
+                          <index> 0 </index>
+                          <define> false </define>
+                        </identifier>
+                      </term>
+                      <symbol> + </symbol>
+                      <term>
+                        <identifier>
+                          <value>size</value>
+                          <category> var </category>
+                          <index> 2 </index>
+                          <define> false </define>
+                        </identifier>
+                      </term>
+                    </expression>
+                    <symbol> ) </symbol>
+                  </term>
+                  <symbol> - </symbol>
+                  <term>
+                    <integerConstant> 1 </integerConstant>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <identifier>
+                      <value>size</value>
+                      <category> var </category>
+                      <index> 2 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <identifier>
+                      <value>size</value>
+                      <category> var </category>
+                      <index> 2 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <letStatement>
+              <keyword> let </keyword>
+              <identifier>
+                <value>x</value>
+                <category> var </category>
+                <index> 0 </index>
+                <define> false </define>
+              </identifier>
+              <symbol> = </symbol>
+              <expression>
+                <term>
+                  <identifier>
+                    <value>x</value>
+                    <category> var </category>
+                    <index> 0 </index>
+                    <define> false </define>
+                  </identifier>
+                </term>
+                <symbol> - </symbol>
+                <term>
+                  <integerConstant> 2 </integerConstant>
+                </term>
+              </expression>
+              <symbol> ; </symbol>
+            </letStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>setColor</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <keyword> true </keyword>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>drawRectangle</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <integerConstant> 1 </integerConstant>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <identifier>
+                      <value>size</value>
+                      <category> var </category>
+                      <index> 2 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol> } </symbol>
+        </ifStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <subroutineDec>
+    <keyword> method </keyword>
+    <keyword> void </keyword>
+    <identifier>
+      <value>moveRight</value>
+      <category> subroutine </category>
+    </identifier>
+    <symbol> ( </symbol>
+    <parameterList>
+    </parameterList>
+    <symbol> ) </symbol>
+    <subroutineBody>
+      <symbol> { </symbol>
+      <statements>
+        <ifStatement>
+          <keyword> if </keyword>
+          <symbol> ( </symbol>
+          <expression>
+            <term>
+              <symbol> ( </symbol>
+              <expression>
+                <term>
+                  <identifier>
+                    <value>x</value>
+                    <category> var </category>
+                    <index> 0 </index>
+                    <define> false </define>
+                  </identifier>
+                </term>
+                <symbol> + </symbol>
+                <term>
+                  <identifier>
+                    <value>size</value>
+                    <category> var </category>
+                    <index> 2 </index>
+                    <define> false </define>
+                  </identifier>
+                </term>
+              </expression>
+              <symbol> ) </symbol>
+            </term>
+            <symbol> &lt; </symbol>
+            <term>
+              <integerConstant> 510 </integerConstant>
+            </term>
+          </expression>
+          <symbol> ) </symbol>
+          <symbol> { </symbol>
+          <statements>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>setColor</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <keyword> false </keyword>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>drawRectangle</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <integerConstant> 1 </integerConstant>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <identifier>
+                      <value>size</value>
+                      <category> var </category>
+                      <index> 2 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <letStatement>
+              <keyword> let </keyword>
+              <identifier>
+                <value>x</value>
+                <category> var </category>
+                <index> 0 </index>
+                <define> false </define>
+              </identifier>
+              <symbol> = </symbol>
+              <expression>
+                <term>
+                  <identifier>
+                    <value>x</value>
+                    <category> var </category>
+                    <index> 0 </index>
+                    <define> false </define>
+                  </identifier>
+                </term>
+                <symbol> + </symbol>
+                <term>
+                  <integerConstant> 2 </integerConstant>
+                </term>
+              </expression>
+              <symbol> ; </symbol>
+            </letStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>setColor</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <keyword> true </keyword>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+            <doStatement>
+              <keyword> do </keyword>
+              <identifier>
+                <value>Screen</value>
+                <category> class </category>
+              </identifier>
+              <symbol> . </symbol>
+              <identifier>
+                <value>drawRectangle</value>
+                <category> subroutine </category>
+              </identifier>
+              <symbol> ( </symbol>
+              <expressionList>
+                <expression>
+                  <term>
+                    <symbol> ( </symbol>
+                    <expression>
+                      <term>
+                        <identifier>
+                          <value>x</value>
+                          <category> var </category>
+                          <index> 0 </index>
+                          <define> false </define>
+                        </identifier>
+                      </term>
+                      <symbol> + </symbol>
+                      <term>
+                        <identifier>
+                          <value>size</value>
+                          <category> var </category>
+                          <index> 2 </index>
+                          <define> false </define>
+                        </identifier>
+                      </term>
+                    </expression>
+                    <symbol> ) </symbol>
+                  </term>
+                  <symbol> - </symbol>
+                  <term>
+                    <integerConstant> 1 </integerConstant>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>x</value>
+                      <category> var </category>
+                      <index> 0 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <identifier>
+                      <value>size</value>
+                      <category> var </category>
+                      <index> 2 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+                <symbol> , </symbol>
+                <expression>
+                  <term>
+                    <identifier>
+                      <value>y</value>
+                      <category> var </category>
+                      <index> 1 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                  <symbol> + </symbol>
+                  <term>
+                    <identifier>
+                      <value>size</value>
+                      <category> var </category>
+                      <index> 2 </index>
+                      <define> false </define>
+                    </identifier>
+                  </term>
+                </expression>
+              </expressionList>
+              <symbol> ) </symbol>
+              <symbol> ; </symbol>
+            </doStatement>
+          </statements>
+          <symbol> } </symbol>
+        </ifStatement>
+        <returnStatement>
+          <keyword> return </keyword>
+          <symbol> ; </symbol>
+        </returnStatement>
+      </statements>
+      <symbol> } </symbol>
+    </subroutineBody>
+  </subroutineDec>
+  <symbol> } </symbol>
+</class>
