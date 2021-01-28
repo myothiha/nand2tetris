@@ -41,7 +41,7 @@ class JackTokenizer:
         self.input_source = open(input_file)
 
         file_split = input_file.split(".")
-        file_split[1] = ".xml"
+        file_split[1] = ".vm"
         self.output_file = "".join(file_split)
 
         # Tokenize current file
@@ -124,12 +124,28 @@ class JackTokenizer:
             string_const = "";
             int_const = "";
             identifier = ""
+            is_keyword = False
+            current_keyword = ""
             for c in line:
                 identifier += c
 
+                if is_keyword:
+                    if c.isalpha():
+                        identifier = current_keyword + c
+                        is_keyword = False
+                        current_keyword = ""
+                    else:
+                        tokens.append((current_keyword, self.KEYWORD))
+                        is_keyword = False
+                        current_keyword = ""
+
                 if self.isKeyword(identifier):
-                    tokens.append((identifier, self.KEYWORD))
+                    # tokens.append((identifier, self.KEYWORD))
+
+                    current_keyword = identifier
+                    is_keyword = True
                     identifier = ""
+
                 elif self.isSymbol(c) and is_string is False and is_int is False:
                     identifier = identifier[:-1]
                     identifier = self.clean(identifier)

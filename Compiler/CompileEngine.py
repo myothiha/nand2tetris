@@ -121,6 +121,7 @@ class CompileEngine:
 
         self.writeTerminalRules(indent)
 
+
         # Write return data type
         tokenizer.advance()
         token = tokenizer.getToken()
@@ -140,6 +141,10 @@ class CompileEngine:
         token = tokenizer.getToken()
         if tokenizer.tokenType() == JackTokenizer.SYMBOL and token == "(":
             self.writeTerminalRules(indent)
+
+        # if it is method, set argument index to 0
+        if is_method:
+            self.symbol_table.arg_index = 0
 
         # Parameter List
         param_count = self.compileParameterList(indent + 1)
@@ -420,7 +425,7 @@ class CompileEngine:
             self.writeTerminalRules(indent)
 
         # Expression
-        self.compileExpression(indent + 1, is_array=True)
+        self.compileExpression(indent + 1, is_array=is_array)
 
         # if it is an array.
         if is_array:
@@ -553,7 +558,7 @@ class CompileEngine:
 
         # check if there is else statement
         if tokenizer.next() == "else":
-            tokenizer.advance();
+            tokenizer.advance()
             # Keyword 'else'
             self.writeTerminalRules(indent)
 
@@ -602,7 +607,7 @@ class CompileEngine:
 
         op = None
         if token in self.operators:
-            while token != ";" and token != ")" and token != ",":
+            while token != ";" and token != ")" and token != "," and token != "]":
                 op = token
                 self.conditionalTerminal(indent, JackTokenizer.SYMBOL)
                 self.compileTerm(indent + 1)
@@ -651,6 +656,8 @@ class CompileEngine:
                     self.code_writer.writePush(CodeWriter.CONST, "0")
                 elif token == "this":
                     self.code_writer.writePush(CodeWriter.POINTER, "0")
+                elif token == "null":
+                    self.code_writer.writePush(CodeWriter.CONST, "0")
                 elif token_type == JackTokenizer.STRING_CONST:
                     string = token
                     str_len = len(string)
@@ -660,6 +667,7 @@ class CompileEngine:
                     for c in string:
                         self.code_writer.writePush(CodeWriter.CONST, ord(c))
                         self.code_writer.writeCall("String.appendChar", "2")
+
 
                 # If there is operator, before current value, push it after the value.
                 # if op:
@@ -682,9 +690,15 @@ class CompileEngine:
             # if the term is array
             if token == "[":
                 var_name = tokenizer.getToken()
+
                 self.conditionalTerminal(indent, JackTokenizer.SYMBOL, "[")
-                self.compileExpression(indent + 1)
+
+                if tokenizer.next(1) == "[":
+                    is_array = True
+
+                self.compileExpression(indent + 1, is_array)
                 self.conditionalTerminal(indent, JackTokenizer.SYMBOL, "]")
+
                 self.code_writer.writePush(self.symbol_table.kindOf(var_name), self.symbol_table.indexOf(var_name))
                 self.code_writer.writeArithmetic("+")
                 self.code_writer.writePop(CodeWriter.POINTER, "1")
@@ -695,9 +709,8 @@ class CompileEngine:
                 # (Classame | Varname) '.' subroutineName
                 # Check if classname or variable. In other word, check if it is an object
                 is_method = False
-                if self.symbol_table.isObject(subroutine_call) and tokenizer == ".":
+                if self.symbol_table.isObject(subroutine_call):
                     var_name = subroutine_call
-                    print(var_name)
                     subroutine_call = self.symbol_table.typeOf(var_name)
                     is_method = True
 
